@@ -1,0 +1,23 @@
+{% extends 'learning_log/base.html' %}
+
+{% block content %}
+
+<p> Topics </p>
+
+<ul>
+    {% for topic in topics %}
+        <li>
+            <a href="{% url 'learning_log:topic' topic.id %}">{{topic.text}}</a>
+        </li>
+    {% empty %}
+        <li> There are no topics yet </li>
+    {% endfor %}
+</ul>
+
+{% endblock content %}
+
+# Here tell me what are we doing :- 
+<a href="{% url 'learning_log:topic' topic.id %}">{{topic.text}}</a>
+we are using topic here from :- 
+path("topics/<int:topic_id>", views.topic, name="topic") learning_logs/urls.py right?
+    
