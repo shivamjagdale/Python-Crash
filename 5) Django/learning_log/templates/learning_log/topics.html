@@ -15,9 +15,3 @@
 </ul>
 
 {% endblock content %}
-
-# Here tell me what are we doing :- 
-<a href="{% url 'learning_log:topic' topic.id %}">{{topic.text}}</a>
-we are using topic here from :- 
-path("topics/<int:topic_id>", views.topic, name="topic") learning_logs/urls.py right?
-    
