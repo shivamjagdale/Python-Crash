@@ -1,0 +1,19 @@
+{% extends 'learning_log/base.html' %}
+
+{% block content %}
+
+<p>
+    <a href="{% url 'learning_log:topic' topic.id %}">{{topic}}</a>
+</p>
+
+<p> Add a new Entry:</p>
+
+<form action="{% url 'learning_log:new_entry' topic.id %}" method="post">
+    {% csrf_token %}
+    {{form.as_div}}
+    <button name="submit">Add Entry</button>
+</form>
+
+{% endblock content %}
+
+The book wants us to add an "Add new entry" link to every topic page.
