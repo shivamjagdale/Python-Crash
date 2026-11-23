@@ -33,6 +33,7 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     # my apps 
     "learning_log",
+    "accounts",
 
     'django.contrib.admin',
     'django.contrib.auth',
@@ -128,3 +129,6 @@ MAILERS = {
         'BACKEND': 'django.core.mail.backends.console.EmailBackend',
     },
 }
+
+# My settings 
+LOGIN_REDIRECT_URL = "learning_log:index"
