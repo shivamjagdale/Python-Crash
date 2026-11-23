@@ -6,4 +6,22 @@
     <a href="{% url 'learning_log:topics' %}">Topics</a>
 </p>
 
+<p>
+    {% if user.is_authenticated %}
+        Hello,{{user.username}}
+    {% else %}
+        <a href="{% url 'accounts:register' %}">Register</a> - 
+        <a href="{% url 'accounts:login' %}">Login</a>
+    {% endif %}
+</p>
+
 {% block content %}{% endblock content %}
+
+<!-- Logout --> 
+{% if user.is_authenticated %}
+    <hr />
+    <form action="{% url 'accounts:logout' %}" method="post">
+        {% csrf_token %}
+        <button name="submit">Logout</button>
+    </form>
+{% endif %}
