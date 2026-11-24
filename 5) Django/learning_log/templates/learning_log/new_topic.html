@@ -4,7 +4,7 @@
 
 <p> Add new Topic:</p>
 
-    <form action="{% url learning_log:new_topic %}" method="post">
+    <form action="{% url 'learning_log:new_topic' %}" method="post">
         {% csrf_token %}
         {{form.as_div}}
         <button name="submit">Add topic</button>
