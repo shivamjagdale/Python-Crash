@@ -3,7 +3,7 @@
 {% block content %}
 
     {% if form.errors %}
-        <p> Your username and password did not match</p>
+        <p>Your username or password is incorrect.</p>
     {% endif %}
 
     <form action="{% url 'accounts:login' %}" method="post">
@@ -11,5 +11,4 @@
         {{form.as_div}}
         <button name="submit">Login</button>
     </form>
-
 {% endblock content %}
