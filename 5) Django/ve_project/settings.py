@@ -130,5 +130,6 @@ MAILERS = {
     },
 }
 
-# My settings
+# My settings 
 LOGIN_REDIRECT_URL = "learning_log:index"
+LOGIN_URL = "accounts:login"
